@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>MOVIE MANIAC</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="add.css">
+  <script src="jquery.min.js"></script>
+  <script src="bootstrap.min.js"></script>
+</head>
+<body id="now" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#now">MOVIE MANIAC</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+              <li><a href="#sh1">NOW SHOWING</a></li>
+        <li><a href="#com">COMMING SOON</a></li>
+
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<!-- Container (now showing Section) -->
+<div id="sh1" class="container-fluid text-center bg-grey">
+  <h2>NOW SHOWING</h2><br>
+  <h4>Book your tickets</h4>
+  <div class="row text-center slideanim">
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="ar.jpg" alt="Paris" width="400" height="300">
+        <p><strong>AARAATTU</strong></p>
+        <a href="#" >BOOK HERE</a>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="hr.jpeg" alt="HRIDAYAM" width="400" height="300">
+        <p><strong>HRIDAYAM</strong></p>
+        <a href="#" >BOOK HERE</a>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="va1.jpg" alt="San Francisco" width="400" height="300">
+        <p><strong>VALIMAI</strong></p>
+        <a href="#" >BOOK HERE</a>
+      </div>
+    </div>
+  </div><br>
+  
+  
+
+<!-- Container (now showing Section) -->
+<div id="com" class="container-fluid text-center bg-grey">
+  <h2>COMMING SOON</h2><br>
+  <h4>LOCK THE DAY</h4>
+  <div class="row text-center slideanim">
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="va2.jpg" alt="Paris" width="400" height="300">
+        <p><strong>12TH MAN</strong></p>
+        <a href="#" >BOOK HERE</a>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="pc2.jpeg" alt="New York" width="400" height="300">
+        <p><strong>MUDHAL NEE</strong></p>
+        <a href="#" >BOOK HERE</a>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="thumbnail">
+        <img src="pc1.jpeg" alt="San Francisco" width="400" height="300">
+        <p><strong>TUMBBAD</strong></p>
+        <a href="#" >BOOK HERE</a>
+      </div>
+    </div>
+  </div><br>
+  
+  
+
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+</script>
+
+</body>
+</html>
+
